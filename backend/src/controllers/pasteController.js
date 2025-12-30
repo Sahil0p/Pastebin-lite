@@ -5,11 +5,20 @@ import { getCurrentTime } from "../utils/timeUtil.js";
 const BASE_URL = process.env.FRONTEND_URL || "";
 
 // HEALTH =========================
+// export const healthCheck = async (req, res) => {
+//   try {
+//     await Paste.findOne();
+//     return res.status(200).json({ ok: true });
+//   } catch {
+//     return res.status(500).json({ ok: false });
+//   }
+// };
+
 export const healthCheck = async (req, res) => {
   try {
-    await Paste.findOne();
+    await mongoose.connection.db.admin().ping();
     return res.status(200).json({ ok: true });
-  } catch {
+  } catch (e) {
     return res.status(500).json({ ok: false });
   }
 };
