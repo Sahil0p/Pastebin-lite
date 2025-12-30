@@ -75,41 +75,41 @@ This project uses **MongoDB** to ensure data is NOT lost across requests.
 GET /api/healthz
 
 Response:
-\`\`\`json
+```json
 { "ok": true }
-\`\`\`
+```
 
 ### Create Paste  
 POST /api/pastes
 
 Request
-\`\`\`json
+```json
 {
   "content": "Hello world",
   "ttl_seconds": 60,
   "max_views": 5
 }
-\`\`\`
+```
 
 Response
-\`\`\`json
+```json
 {
   "id": "uuid",
   "url": "\$FRONTEND_URL/p/<id>"
 }
-\`\`\`
+```
 
 ### Get Paste (JSON API)
 GET /api/pastes/:id
 
 Response
-\`\`\`json
+```json
 {
   "content": "string",
   "remaining_views": 4,
   "expires_at": "2026-01-01T00:00:00.000Z"
 }
-\`\`\`
+```
 
 404 when:
 - paste not found
@@ -144,14 +144,14 @@ If header missing → real time.
 ### Frontend Rewrite Rules (SPA Fix)
 
 vercel.json
-\`\`\`json
+```json
 {
   "rewrites": [
     { "source": "/p/:id", "destination": "/" },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
-\`\`\`
+```
 
 ### Environment Variables
 
