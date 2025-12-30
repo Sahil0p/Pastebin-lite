@@ -12,21 +12,30 @@ A high-performance, secure Pastebin alternative supporting:
 
 ## 🚀 Live Application
 
-**Frontend**  
-🔗 https://pastebin-lite-frontend-pied.vercel.app
-
-**Backend**  
-🔗 https://pastebin-lite-taupe-seven.vercel.app
-
-**Health Check**  
-🔗 https://pastebin-lite-taupe-seven.vercel.app/api/healthz
+[![Frontend](https://img.shields.io/badge/Frontend-Live-brightgreen)](https://pastebin-lite-frontend-pied.vercel.app)
+[![Backend](https://img.shields.io/badge/Backend-Server-blue)](https://pastebin-lite-taupe-seven.vercel.app)
+[![Health](https://img.shields.io/badge/API-Health_Check-success)](https://pastebin-lite-taupe-seven.vercel.app/api/healthz)
+[![Postman](https://img.shields.io/badge/Postman-Collection-orange)](https://sahilahmed0029-3594081.postman.co/workspace/Sahil-Ahmed's-Workspace~507292b8-beec-4de7-81da-d9594af9042c/collection/47691689-c808fda9-5ca7-4a32-9e84-ffd616af38db?action=share&creator=47691689)
 
 ---
 
-## 🧪 Postman Collection
-Use this to test APIs easily:
+## 🧪 Postman Collection Details
 
-🔗 https://sahilahmed0029-3594081.postman.co/workspace/Sahil-Ahmed's-Workspace~507292b8-beec-4de7-81da-d9594af9042c/collection/47691689-c808fda9-5ca7-4a32-9e84-ffd616af38db?action=share&creator=47691689
+The Postman collection contains a **complete testing suite** for this backend, including:
+
+- ✅ Health Check API  
+- ✅ Create Paste API (with TTL + max views payload samples)  
+- ✅ Get Paste JSON API  
+- ✅ HTML View Endpoint Tests  
+- ✅ Raw Text Mode Test  
+- ✅ Expiry Testing using `x-test-now-ms` header  
+- ✅ Tests for expired + max view exceeded scenarios  
+
+This allows evaluators to:
+- Quickly verify correctness  
+- Validate expiry & business rules  
+- Confirm deterministic testing behavior  
+- Validate production readiness  
 
 ---
 
@@ -64,46 +73,91 @@ Use this to test APIs easily:
 
 This project uses **MongoDB** to ensure data is NOT lost across requests.
 
-📌 MongoDB Connection: MONGO_URI
+📌 MongoDB Connection:
+
+
+---
+
+## 🛠️ Local Development Setup
+### Backend Setup
+
+```
+git clone <repo>
+cd backend
+npm install
+```
+
+- Create .env
+```
+MONGODB_URI=your_mongo_url
+FRONTEND_URL=http://localhost:5173
+TEST_MODE=1
+```
+
+- Run:
+```
+npm run dev
+```
+
+- Backend runs at:
+
+> http://localhost:3000
+
+### Frontend Setup
+
+```
+cd frontend
+npm install
+```
+
+- Create .env
+```
+VITE_API_URL=http://localhost:3000/api
+```
+
+- Run:
+```
+npm run dev
+```
+
+- Frontend runs at:
+
+> http://localhost:5173
 
 ---
 
 ## 🔎 Required Endpoints (Implemented)
 
 ### Health Check
-
-GET /api/healthz
-
-Response:
+**GET** `/api/healthz`
 ```json
 { "ok": true }
 ```
 
-### Create Paste  
-POST /api/pastes
+### Create Paste
 
-Request
-```json
+**POST** `/api/pastes`
+```
 {
   "content": "Hello world",
   "ttl_seconds": 60,
   "max_views": 5
 }
+
 ```
 
-Response
-```json
+**Response**
+```
 {
   "id": "uuid",
-  "url": "\$FRONTEND_URL/p/<id>"
+  "url": "https://pastebin-lite-frontend-pied.vercel.app/p/<id>"
 }
 ```
 
 ### Get Paste (JSON API)
-GET /api/pastes/:id
 
-Response
-```json
+**GET** `/api/pastes/:id`
+```
 {
   "content": "string",
   "remaining_views": 4,
@@ -111,40 +165,36 @@ Response
 }
 ```
 
-404 when:
-- paste not found
-- expired
-- view limit reached
+> Returns 404 when:
+  > paste not found
+  > expired
+  > max views reached
 
 ### View Paste (HTML)
-GET /p/:id  
-Returns rendered HTML page (safe, no scripts)
+
+**GET** `/p/:id`
+> Returns rendered HTML page (safe, no scripts)
 
 ### Raw Mode
-GET /api/pastes/:id/raw  
-Returns plain text
+
+**GET** `/api/pastes/:id/raw`
+> Returns plain text.
 
 ---
 
 ## 🧪 Deterministic Expiry Mode
 
-When:
-TEST_MODE=1  
-
-Backend uses testing clock via:
-
-\`x-test-now-ms: <epoch_ms>\`
-
-If header missing → real time.
+- When: `TEST_MODE = 1`
+- Backend supports controlled testing clock using header: `x-test-now-ms: <epoch_ms>`
+- If header missing → real time is used.
 
 ---
 
 ## 🧭 Deployment Notes
-
 ### Frontend Rewrite Rules (SPA Fix)
 
-vercel.json
-```json
+**vercel.json**
+```
 {
   "rewrites": [
     { "source": "/p/:id", "destination": "/" },
@@ -152,33 +202,31 @@ vercel.json
   ]
 }
 ```
+### ⚙️ Environment Variables
+**Backend**
+```
+MONGODB_URI=
+TEST_MODE=1 (optional)
+FRONTEND_URL=https://pastebin-lite-frontend-pied.vercel.app
+```
 
-### Environment Variables
+**Frontend**
 
-#### Backend
-MONGODB_URI=  
-TEST_MODE=1 (optional)  
-FRONTEND_URL=\$FRONTEND_URL  
-
-#### Frontend
-VITE_API_URL=\$BACKEND_URL/api
+```
+VITE_API_URL=https://pastebin-lite-taupe-seven.vercel.app/api
+```
 
 ---
 
 ## 🏁 Final Verification Checklist
 
-✔ /api/healthz returns JSON  
-✔ Create paste works  
-✔ HTML view works  
-✔ JSON fetch works  
-✔ TTL expires correctly  
-✔ Max views enforced  
-✔ Combined constraints work  
-✔ No negative remaining views  
-✔ Expired returns 404  
-✔ Frontend /p/:id works even on refresh  
-
----
-
-## 👨‍💻 Author
-Pastebin Lite — Built for take-home backend challenge.
+✔ /api/healthz returns JSON
+✔ Create paste works
+✔ HTML view works
+✔ JSON fetch works
+✔ TTL expires correctly
+✔ Max views enforced
+✔ Combined constraints work
+✔ No negative remaining views
+✔ Expired returns 404
+✔ Frontend /p/:id works even on refresh
