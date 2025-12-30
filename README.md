@@ -166,9 +166,9 @@ npm run dev
 ```
 
 > Returns 404 when:
-  > paste not found
-  > expired
-  > max views reached
+ > paste not found
+ > expired
+ > max views reached
 
 ### View Paste (HTML)
 
@@ -220,13 +220,13 @@ VITE_API_URL=https://pastebin-lite-taupe-seven.vercel.app/api
 
 ## 🏁 Final Verification Checklist
 
-✔ /api/healthz returns JSON
-✔ Create paste works
-✔ HTML view works
-✔ JSON fetch works
-✔ TTL expires correctly
-✔ Max views enforced
-✔ Combined constraints work
-✔ No negative remaining views
-✔ Expired returns 404
-✔ Frontend /p/:id works even on refresh
+- ✔ /api/healthz returns JSON
+- ✔ Create paste works
+- ✔ HTML view works
+- ✔ JSON fetch works
+- ✔ TTL expires correctly
+- ✔ Max views enforced
+- ✔ Combined constraints work
+- ✔ No negative remaining views
+- ✔ Expired returns 404
+- ✔ Frontend /p/:id works even on refresh
