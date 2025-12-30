@@ -3,6 +3,9 @@ import cors from "cors";
 import dotenv from "dotenv";
 import router from "./routes/pasteRoutes.js";
 import errorHandler from "./middleware/errorHandler.js";
+import { connectDB } from "./config/db.js";
+
+connectDB();
 
 dotenv.config();
 

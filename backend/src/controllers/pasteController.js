@@ -5,29 +5,29 @@ import { getCurrentTime } from "../utils/timeUtil.js";
 const BASE_URL = process.env.FRONTEND_URL || "";
 
 // HEALTH =========================
-// export const healthCheck = async (req, res) => {
-//   try {
-//     await Paste.findOne();
-//     return res.status(200).json({ ok: true });
-//   } catch {
-//     return res.status(500).json({ ok: false });
-//   }
-// };
-
 export const healthCheck = async (req, res) => {
   try {
-    if (mongoose.connection.readyState !== 1) {
-      await mongoose.connect(process.env.MONGODB_URI);
-    }
-
-    await mongoose.connection.db.admin().ping();
-
+    await Paste.findOne();
     return res.status(200).json({ ok: true });
-  } catch (e) {
-    console.error("Health Error:", e.message);
+  } catch {
     return res.status(500).json({ ok: false });
   }
 };
+
+// export const healthCheck = async (req, res) => {
+//   try {
+//     if (mongoose.connection.readyState !== 1) {
+//       await mongoose.connect(process.env.MONGODB_URI);
+//     }
+
+//     await mongoose.connection.db.admin().ping();
+
+//     return res.status(200).json({ ok: true });
+//   } catch (e) {
+//     console.error("Health Error:", e.message);
+//     return res.status(500).json({ ok: false });
+//   }
+// };
 
 // CREATE =========================
 export const createPaste = async (req, res) => {
