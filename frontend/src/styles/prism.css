@@ -1,0 +1,7 @@
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #e5e5e5;
+  background: transparent;
+  text-shadow: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
