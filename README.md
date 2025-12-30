@@ -79,7 +79,13 @@ This project uses **MongoDB** to ensure data is NOT lost across requests.
 ---
 
 ## 🛠️ Local Development Setup
-### Backend Setup
+### 1️⃣ Clone repository
+```
+git clone https://github.com/Sahil0p/Pastebin-lite
+cd Pastebin-lite
+```
+
+### 2️⃣ Backend Setup
 
 ```
 git clone <repo>
@@ -103,7 +109,7 @@ npm run dev
 
 > http://localhost:3000
 
-### Frontend Setup
+### 3️⃣ Frontend Setup
 
 ```
 cd frontend
@@ -166,9 +172,9 @@ npm run dev
 ```
 
 > Returns 404 when:
- > paste not found
- > expired
- > max views reached
+> paste not found
+> expired
+> max views reached
 
 ### View Paste (HTML)
 
