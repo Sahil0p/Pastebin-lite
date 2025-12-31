@@ -64,8 +64,7 @@ A high-performance, secure Pastebin alternative supporting:
   ```
 
 - 🌐 Backend runs at:
-
-> http://localhost:3000
+  - `http://localhost:3000`
 
 ### 3️⃣ Frontend Setup 🎨
 
