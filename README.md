@@ -196,11 +196,10 @@ It includes every critical operation required to test functionality, persistence
     "expires_at": "2026-01-01T00:00:00.000Z"
   }
   ```
-
-> Returns 404 when:    
-> ├── paste not found  
-> ├── expired  
-> └── max views reached  
+- Returns 404 when:
+  - paste not found
+  - expired
+  - max views reached  
 
 ### View Paste (HTML)
 
