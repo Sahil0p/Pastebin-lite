@@ -160,41 +160,42 @@ It includes every critical operation required to test functionality, persistence
 ## 🔎 Required Endpoints (Implemented)
 
 ### Health Check
-**GET** `/api/healthz`
-```json
-{ "ok": true }
-```
+- **GET** `/api/healthz`
+  ```json
+  { "ok": true }
+  ```
 
 ### Create Paste
 
-**POST** `/api/pastes`
-```
-{
-  "content": "Hello world",
-  "ttl_seconds": 60,
-  "max_views": 5
-}
+- **POST** `/api/pastes`
+  ```
+  {
+    "content": "Hello world",
+    "ttl_seconds": 60,
+    "max_views": 5
+  }
 
-```
+  ```
 
-**Response**
-```
-{
-  "id": "uuid",
-  "url": "https://pastebin-lite-frontend-pied.vercel.app/p/<id>"
-}
-```
+- **Response**
+
+  ```
+  {
+    "id": "uuid",
+    "url": "https://pastebin-lite-frontend-pied.vercel.app/p/<id>"
+  }
+  ```
 
 ### Get Paste (JSON API)
 
-**GET** `/api/pastes/:id`
-```
-{
-  "content": "string",
-  "remaining_views": 4,
-  "expires_at": "2026-01-01T00:00:00.000Z"
-}
-```
+- **GET** `/api/pastes/:id`
+  ```
+  {
+    "content": "string",
+    "remaining_views": 4,
+    "expires_at": "2026-01-01T00:00:00.000Z"
+  }
+  ```
 
 > Returns 404 when:    
 > ├── paste not found  
@@ -203,13 +204,13 @@ It includes every critical operation required to test functionality, persistence
 
 ### View Paste (HTML)
 
-**GET** `/p/:id`
-> Returns rendered HTML page (safe, no scripts)
+- **GET** `/p/:id`
+  - Returns rendered HTML page (safe, no scripts)
 
 ### Raw Mode
 
-**GET** `/api/pastes/:id/raw`
-> Returns plain text.
+- **GET** `/api/pastes/:id/raw`
+  - Returns plain text.
 
 ---
 
@@ -234,18 +235,18 @@ It includes every critical operation required to test functionality, persistence
 }
 ```
 ### ⚙️ Environment Variables
-**Backend**
-```
-MONGODB_URI=
-TEST_MODE=1 (optional)
-FRONTEND_URL=https://pastebin-lite-frontend-pied.vercel.app
-```
+- **Backend**
+  ```
+  MONGODB_URI=
+  TEST_MODE=1 (optional)
+  FRONTEND_URL=https://pastebin-lite-frontend-pied.vercel.app
+  ```
 
-**Frontend**
+- **Frontend**
 
-```
-VITE_API_URL=https://pastebin-lite-taupe-seven.vercel.app/api
-```
+  ```
+  VITE_API_URL=https://pastebin-lite-taupe-seven.vercel.app/api
+  ```
 
 ---
 
