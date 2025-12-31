@@ -39,29 +39,29 @@ A high-performance, secure Pastebin alternative supporting:
 
 ## 🛠️ Local Development Setup
 ### 1️⃣ Clone repository
-```
-git clone https://github.com/Sahil0p/Pastebin-lite
-cd Pastebin-lite
-```
+  ```
+  git clone https://github.com/Sahil0p/Pastebin-lite
+  cd Pastebin-lite
+  ```
 
 ### 2️⃣ Backend Setup ⚙️
 
-```
-cd backend
-npm install
-```
+  ```
+  cd backend
+  npm install
+  ```
 
 - 📄 Create .env
-```
-MONGODB_URI=your_mongo_url
-FRONTEND_URL=http://localhost:5173
-TEST_MODE=1
-```
+  ```
+  MONGODB_URI=your_mongo_url
+  FRONTEND_URL=http://localhost:5173
+  TEST_MODE=1
+  ```
 
 - ▶️ Run:
-```
-npm run dev
-```
+  ```
+  npm run dev
+  ```
 
 - 🌐 Backend runs at:
 
@@ -69,20 +69,20 @@ npm run dev
 
 ### 3️⃣ Frontend Setup 🎨
 
-```
-cd frontend
-npm install
-```
+  ```
+  cd frontend
+  npm install
+  ```
 
 - 📄 Create .env
-```
-VITE_API_URL=http://localhost:3000/api
-```
+  ```
+  VITE_API_URL=http://localhost:3000/api
+  ```
 
 - ▶️ Run:
-```
-npm run dev
-```
+  ```
+  npm run dev
+  ```
 
 - 🌐 Frontend runs at:
 
