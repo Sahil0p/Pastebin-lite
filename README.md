@@ -12,10 +12,16 @@ A high-performance, secure Pastebin alternative supporting:
 
 ## 🚀 Live Application
 
-[![Frontend](https://img.shields.io/badge/Frontend-Live-brightgreen)](https://pastebin-lite-frontend-pied.vercel.app)
-[![Backend](https://img.shields.io/badge/Backend-Server-blue)](https://pastebin-lite-taupe-seven.vercel.app)
-[![Health](https://img.shields.io/badge/API-Health_Check-success)](https://pastebin-lite-taupe-seven.vercel.app/api/healthz)
-[![Postman](https://img.shields.io/badge/Postman-Collection-orange)](https://sahilahmed0029-3594081.postman.co/workspace/Sahil-Ahmed's-Workspace~507292b8-beec-4de7-81da-d9594af9042c/collection/47691689-c808fda9-5ca7-4a32-9e84-ffd616af38db?action=share&creator=47691689)
+## 🚀 Live Application Links
+
+**Project Live Link:**  
+[Pastebin Lite Live](https://pastebin-lite-frontend-pied.vercel.app)
+
+**API Health Check:**  
+[API Health](https://pastebin-lite-taupe-seven.vercel.app/api/healthz)
+
+**Postman Collection:**  
+[Postman Collection](https://sahilahmed0029-3594081.postman.co/workspace/Sahil-Ahmed's-Workspace~507292b8-beec-4de7-81da-d9594af9042c/collection/47691689-c808fda9-5ca7-4a32-9e84-ffd616af38db?action=share&creator=47691689)
 
 ---
 
@@ -171,10 +177,10 @@ npm run dev
 }
 ```
 
-> Returns 404 when:
-> paste not found
-> expired
-> max views reached
+> Returns 404 when:    
+> ├── paste not found  
+> ├── expired  
+> └── max views reached  
 
 ### View Paste (HTML)
 
