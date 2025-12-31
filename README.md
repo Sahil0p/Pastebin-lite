@@ -1,59 +1,37 @@
-# Pastebin Lite – Production Ready Secure Paste Service
+# Pastebin Lite – Production Ready Secure Paste Service 🚀
 
 A high-performance, secure Pastebin alternative supporting:
-- Time-based expiry (TTL)
-- Max view limits
-- Permanent pastes
-- Server persistence (MongoDB / DB survives restarts)
-- Deterministic expiry testing
-- Full HTML + JSON viewer support
+- ⏳ Time-based expiry (TTL)
+- 👀 Max view limits
+- 📌 Permanent pastes
+- 🗄️ MongoDB persistence (data survives restarts)
+- 🧪 Deterministic expiry testing
+- 🌐 Full HTML + JSON viewer support
 
 ---
-
-## 🚀 Live Application
 
 ## 🚀 Live Application Links
 
-**Project Live Link:**  
+**🌍 Project Live Link:**  
 [Pastebin Lite Live](https://pastebin-lite-frontend-pied.vercel.app)
 
-**API Health Check:**  
+**🩺 API Health Check:**  
 [API Health](https://pastebin-lite-taupe-seven.vercel.app/api/healthz)
 
-**Postman Collection:**  
+**📬 Postman Collection:**  
 [Postman Collection](https://sahilahmed0029-3594081.postman.co/workspace/Sahil-Ahmed's-Workspace~507292b8-beec-4de7-81da-d9594af9042c/collection/47691689-c808fda9-5ca7-4a32-9e84-ffd616af38db?action=share&creator=47691689)
-
----
-
-## 🧪 Postman Collection Details
-
-The Postman collection contains a **complete testing suite** for this backend, including:
-
-- ✅ Health Check API  
-- ✅ Create Paste API (with TTL + max views payload samples)  
-- ✅ Get Paste JSON API  
-- ✅ HTML View Endpoint Tests  
-- ✅ Raw Text Mode Test  
-- ✅ Expiry Testing using `x-test-now-ms` header  
-- ✅ Tests for expired + max view exceeded scenarios  
-
-This allows evaluators to:
-- Quickly verify correctness  
-- Validate expiry & business rules  
-- Confirm deterministic testing behavior  
-- Validate production readiness  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React + Vite + Tailwind + Framer Motion  
-- **Backend**: Node.js + Express  
-- **Database**: MongoDB (Persistent Storage)  
-- **Deployment**
+- 🎨 **Frontend**: React + Vite + Tailwind + Framer Motion  
+- 🧠 **Backend**: Node.js + Express  
+- 🗃️ **Database**: MongoDB (Persistent Storage)  
+- 🚀 **Deployment**
   - Backend: Vercel Serverless
   - Frontend: Vercel  
-- **Security**
+- 🔐 **Security**
   - Password protected pastes
   - Safe HTML rendering
 
@@ -84,6 +62,45 @@ This project uses **MongoDB** to ensure data is NOT lost across requests.
 
 ---
 
+## 🧪 Postman Collection Details
+
+This Postman collection contains a **complete and production-ready API testing suite** for the Pastebin Lite backend.  
+It includes every critical operation required to test functionality, persistence, expiry logic, and trash management.
+
+### 📌 Included Requests
+
+- ✅ **Health Check**
+- 🟢 **Create Paste**
+- 🟢 **Get Paste (JSON API)**
+- 🟢 **Get Paste – Raw Text**
+- 🟢 **View Paste – HTML Page**
+- 🟢 **List All Pastes**
+
+
+
+### 🗑️ Trash & Cleanup Management
+
+- 🗑️ **Move to Trash (Soft Delete)**
+- ♻️ **Restore Paste (Undo Delete)**
+- ❌ **Permanent Delete**
+
+
+### ⭐ Additional Feature
+
+- ⭐ **Toggle Star (Mark paste as favorite / un-favorite)**
+
+### 🎯 What This Collection Enables Evaluators To Do
+
+- ⚡ Quickly verify API correctness and behavior  
+- 🧪 Validate paste creation, retrieval, and viewing  
+- 🗄️ Confirm persistence and listing behavior  
+- ♻️ Test soft delete + restore lifecycle  
+- 🚮 Validate permanent deletion safety  
+- ⭐ Validate UX features like starring  
+- 🏆 Confirms the backend is production-ready
+
+---
+
 ## 🛠️ Local Development Setup
 ### 1️⃣ Clone repository
 ```
@@ -94,7 +111,6 @@ cd Pastebin-lite
 ### 2️⃣ Backend Setup
 
 ```
-git clone <repo>
 cd backend
 npm install
 ```
