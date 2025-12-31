@@ -103,6 +103,7 @@ A high-performance, secure Pastebin alternative supporting:
 
 ## 🧷 Persistence Requirement ✔
 
+📌 **MongoDB Connection**
 This project uses **MongoDB** to ensure that all pastes remain safely stored and are **not lost across server restarts or deployments**.  
 Unlike in-memory storage, MongoDB provides:
 
@@ -113,7 +114,7 @@ Unlike in-memory storage, MongoDB provides:
 
 MongoDB acts as the backbone of this application, ensuring every paste, whether temporary or permanent, is stored consistently and retrieved accurately.
 
-📌 **MongoDB Connection**
+
 ---
 
 ## 🧪 Postman Collection Details
