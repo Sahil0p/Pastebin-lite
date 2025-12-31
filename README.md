@@ -12,14 +12,11 @@ A high-performance, secure Pastebin alternative supporting:
 
 ## 🚀 Live Application Links
 
-**🌍 Project Live Link:**  
-[Pastebin Lite Live](https://pastebin-lite-frontend-pied.vercel.app)
+**🌍 Project Live Link:**  [Pastebin Lite Live](https://pastebin-lite-frontend-pied.vercel.app)
 
-**🩺 API Health Check:**  
-[API Health](https://pastebin-lite-taupe-seven.vercel.app/api/healthz)
+**🩺 API Health Check:**  [API Health](https://pastebin-lite-taupe-seven.vercel.app/api/healthz)
 
-**📬 Postman Collection:**  
-[Postman Collection](https://sahilahmed0029-3594081.postman.co/workspace/Sahil-Ahmed's-Workspace~507292b8-beec-4de7-81da-d9594af9042c/collection/47691689-c808fda9-5ca7-4a32-9e84-ffd616af38db?action=share&creator=47691689)
+**📬 Postman Collection:**  [Postman Collection Link](https://sahilahmed0029-3594081.postman.co/workspace/Sahil-Ahmed's-Workspace~507292b8-beec-4de7-81da-d9594af9042c/collection/47691689-c808fda9-5ca7-4a32-9e84-ffd616af38db?action=share&creator=47691689)
 
 ---
 
@@ -84,8 +81,7 @@ A high-performance, secure Pastebin alternative supporting:
   ```
 
 - 🌐 Frontend runs at:
-
-> http://localhost:5173
+  - http://localhost:5173
 
 ---
 
@@ -109,7 +105,7 @@ A high-performance, secure Pastebin alternative supporting:
 
 This project uses **MongoDB** to ensure data is NOT lost across requests.
 
-📌 MongoDB Connection:
+📌 MongoDB Connection
 
 
 ---
